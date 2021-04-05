@@ -1,0 +1,9 @@
+---
+- name: Tesing Uptime
+  hosts: all
+  tasks:
+    - name: Run Uptime
+      shell: uptime
+      register: uptime
+    - debug:
+        msg: "Server Uptime is {{ uptime.stdout }}"
